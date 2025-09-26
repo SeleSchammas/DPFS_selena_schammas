@@ -1,0 +1,13 @@
+# Ignorar imágenes
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Ignorar carpetas
+/img/
+/styles/
+/views/
+
+# Ignorar archivos
+*.md
