@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuenta - Brontë Bags</title>
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav-left">
+      <ul class="menu-izquierdo">
+        <li class="dropdown">
+          <a href="todos.html" class="dropbtn">Productos</a>
+          <ul class="submenu">
+            <li><a href="todos.html">Todos los productos</a></li>
+            <li><a href="carteras.html">Carteras</a></li>
+            <li><a href="mochilas.html">Mochilas</a></li>
+            <li><a href="gafas.html">Gafas Unisex</a></li>
+            <li><a href="accesorios.html">Accesorios Unisex</a></li>
+          </ul>
+        </li>
+        <li><a href="giftcard.html">GIFT CARDS</a></li>
+        <li><a href="sale.html">SALE</a></li>
+      </ul>
+    </nav>
+    <!-- Logo centro -->
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="../img/logo.png" alt="Logo Brontë Bags">
+        <h1 class="libre-baskerville-bold">Brontë Bags</h1>
+      </a>
+    </div>
+    <!-- Menú derecha (vertical) -->
+    <nav class="nav-right">
+      <a href="cuenta.html">Cuenta</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Mi Pedido</a>
+        <ul class="pedido-submenu">
+          <li>Aún no tienes productos en tu pedido, ¡elige algo para agregar!</li>
+        </ul>
+      </div>
+      <a href="buscar.html">Buscar</a>
+    </nav>
+  </header>
+  <!-- MAIN -->
+  <main class="cuenta">
+    <!-- Iniciar sesión -->
+    <div class="formulario">
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <label for="email-login">Email</label>
+        <input type="email" id="email-login" name="email-login" placeholder="Ingresá tu email">
+
+        <label for="password-login">Contraseña</label>
+        <input type="password" id="password-login" name="password-login" placeholder="Ingresá tu contraseña">
+
+        <!-- Checkbox Recordarme -->
+        <div class="checkbox">
+          <input type="checkbox" id="recordarme" name="recordarme">
+          <label for="recordarme">Recordarme</label>
+        </div>
+
+        <button type="submit">INGRESAR</button>
+        <p><a href="#">Olvidé mi contraseña</a></p>
+      </form>
+    </div>
+
+    <!-- Crear cuenta -->
+    <div class="formulario">
+      <h2>Crear Cuenta</h2>
+      <form>
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre completo">
+
+        <label for="email-registro">Email</label>
+        <input type="email" id="email-registro" name="email" placeholder="Ingresá tu email" class="error">
+        <!-- Error debajo del input -->
+        <span class="error-text">El email ingresado no es válido</span>
+
+        <label for="password-registro">Contraseña</label>
+        <input type="password" id="password-registro" name="password" placeholder="Creá una contraseña">
+
+        <label for="confirmar-password">Confirmar Contraseña</label>
+        <input type="password" id="confirmar-password" name="confirmar_password" placeholder="Repetí tu contraseña">
+
+        <!-- Checkbox Términos -->
+        <div class="checkbox">
+          <input type="checkbox" id="terminos" name="terminos">
+          <label for="terminos">Acepto los términos y condiciones</label>
+        </div>
+
+        <button type="submit">CREAR CUENTA</button>
+      </form>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-socials">
+      <a href="https://instagram.com/bronte.bags">Instagram</a>
+      <a href="https://facebook.com">Facebook</a>
+      <a href="https://wa.me/3855306000">WhatsApp</a>
+    </div>
+  </footer>
+</body>
+
+</html>
