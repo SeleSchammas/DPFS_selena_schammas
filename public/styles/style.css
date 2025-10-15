@@ -1,0 +1,902 @@
+/* Paleta de colores y fuentes */
+:root {
+  --marron-choco: #6b4226;
+  --marron-claro: #d9b999;
+  --beige: #f5f0e1;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --fuente-titulos: "Libre Baskerville", serif;
+  --fuente-body: "Merriweather Sans", sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-body);
+  background-color: var(--beige);
+  color: var(--negro);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--marron-choco);
+  padding: 5px 15px;
+  border-radius: 0 0 20px 20px;
+  color: var(--blanco);
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-left a, .nav-right a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+  color: var(--marron-claro);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logo h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 33px;
+  font-weight: 500;
+  color: var(--marron-claro);
+  line-height: 1.2;
+  display: block;
+  cursor: pointer;
+}
+
+.logo a {
+  display: flex;               /* mantiene la imagen y el texto en fila */
+  align-items: center;         /* centra verticalmente */
+  gap: 15px;                   /* espacio entre imagen y texto */
+  text-decoration: none;       /* quita subrayado del h1 */
+  color: inherit;              /* hereda el color original del texto */
+}
+
+.logo a:hover h1 {
+  color: var(--beige);  /* mismo efecto hover que el menú */
+  transition: color 0.3s;
+}
+
+/* Secciones generales */
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--marron-choco);
+  font-family: var(--fuente-titulos);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Formularios (cuenta.html) */
+.cuenta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+.formulario {
+  background: var(--marron-claro);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  font-family: var(--fuente-body);
+}
+
+.formulario h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--marron-choco);
+  text-align: center;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--marron-choco);
+}
+
+.formulario input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--fuente-body);
+  background-color: var(--beige);
+}
+
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--marron-choco);
+  color: var(--blanco);
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #5a3220;
+}
+
+.formulario p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.formulario p a {
+  color: var(--marron-choco);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.formulario p a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para errores */
+.error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Ajustar checkbox con texto al lado */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+
+/* Buscador */
+.buscador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 30px auto;
+  background: var(--marron-claro);
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 5px 15px;
+}
+
+.buscador input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 18px;      /* más espacio a izquierda y derecha */
+  font-size: 16px;
+  font-family: var(--fuente-body);
+  background: transparent;
+  letter-spacing: 1px;
+  text-align: left;        /* <- alinea el placeholder a la izquierda */
+  padding-left: 24px;      /* <- opcional: separación del borde izquierdo */
+}
+
+/* Categorías debajo del buscador */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.categorias a {
+  text-decoration: none;
+  font-family: var(--fuente-titulos);
+  font-size: 18px;
+  color: var(--marron-choco);
+  border-bottom: 2px dotted var(--marron-choco);
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.categorias a:hover {
+  color: var(--marron-claro);
+}
+
+/* Footer */
+.footer {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.footer-socials a {
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  color: var(--marron-claro);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--marron-choco);
+}
+
+/* ================== */
+/* Sección Carteras, Mochilas, Gafas y Accesorios */
+/* ================== */
+.titulo-seccion {
+  font-family: var(--fuente-titulos);
+  font-size: 20px;
+  color: #7a3e20;
+  margin: 30px 0 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.producto {
+  background-color: #fdfcfb;
+  border: 0.5px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+}
+
+.imagen-galeria {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border: 0.5px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.producto h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  color: #4a2e14;
+}
+
+.precio {
+  font-size: 16px;
+  color: #7a3e20;
+  margin-bottom: 12px;
+}
+
+.btn-comprar {
+  background-color: #a6783a;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #7a3e20;
+}
+
+/* ================== */
+/* Página de Detalle Producto */
+/* ================== */
+.detalle-producto {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  align-items: flex-start;
+}
+
+.miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.miniaturas img {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.imagen-principal img {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: var(--fuente-titulos);
+}
+
+.info h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--negro);
+}
+
+.info .medidas {
+  font-size: 15px;
+  color: #333;
+}
+
+.info .precio {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.stock {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cantidad button {
+  background: var(--blanco);
+  border: none;
+  padding: 5px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cantidad span {
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+.btn-carrito {
+  display: inline-block;
+  background-color: var(--marron-choco);
+  color: var(--blanco);
+  font-weight: bold;
+  padding: 12px 20px;
+  text-align: center;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-carrito:hover {
+  background-color: #5a3220;
+}
+
+.extra {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* --------- Single-image product pages (gafas / accesorios) --------- */
+.imagen-principal.unico {
+  /* ocupa la primera y segunda columna del grid (la columna estrecha + la central) */
+  grid-column: 1 / 3;
+  justify-self: center;   /* centra el bloque dentro del espacio que ocupa */
+  align-self: start;
+  margin-right: 50px;     /* separación extra respecto a la columna de texto */
+}
+
+.imagen-principal.unico img {
+  width: 100%;            /* aprovecha todo el ancho del área que abarca */
+  max-width: 760px;       /* tamaño máximo; ajustá este valor si lo querés más/menos grande */
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Enlaces dentro de títulos de secciones */
+section h2 a {
+  text-decoration: none;       
+  color: inherit;               
+  font-family: inherit;        
+}
+
+section h2 a:hover {
+  color: var(--marron-claro);  
+}
+
+/* Enlaces dentro de títulos de productos (todos.html) */
+.producto h3 a {
+  text-decoration: none;       /* sin subrayado */
+  color: inherit;              /* hereda el color de h3 */
+  font-family: inherit;        /* mantiene la tipografía */
+  display: inline-block;
+}
+
+.producto h3 a:hover {
+  color: var(--marron-claro);  /* cambia de color en hover */
+}
+
+/* --- Menú izquierdo --- */
+.menu-izquierdo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-izquierdo li {
+  position: relative;
+}
+
+.menu-izquierdo a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  /* usa directamente el estilo global del header */
+}
+
+/* Dropdown hacia la derecha */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #c9a37d; /* marrón clarito */
+  min-width: 180px;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  padding: 10px 14px;
+  display: block;
+  text-decoration: none;
+  font-family: var(--fuente-titulos);  
+  font-size: 16px;                     
+  color: var(--blanco);  
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Submenú lateral */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* despliegue hacia la derecha */
+  background: #d2b48c; /* marrón clarito */
+  border: 1px solid #ccc;
+  min-width: 160px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+}
+
+/* Items dentro del submenú */
+.submenu li a {
+  padding: 8px 12px;
+  font-family: var(--fuente-titulos);  /* igual que el header */
+  font-size: 16px;                     /* mismo tamaño */
+  color: var(--blanco);                /* mismo color */
+  white-space: nowrap;
+}
+
+
+/* Hover del submenú */
+.submenu li a:hover {
+  background: rgba(0,0,0,0.1); /* efecto sutil como en tu dropdown */
+}
+
+/* Mostrar submenú al pasar el mouse */
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* Submenú de "Mi Pedido" */
+.pedido-submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* debajo del botón */
+  left: 0;
+  background: #d2b48c;
+  border: 1px solid #ccc;
+  min-width: 240px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.pedido-submenu li {
+  padding: 8px 12px;
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  color: var(--blanco);
+  white-space: normal;
+}
+
+/* Mostrar submenú al pasar mouse */
+.dropdown:hover .pedido-submenu {
+  display: block;
+}
+
+/* ==== Submenú de "Mi Pedido" (alineado al centro y abre hacia la IZQUIERDA) ==== */
+.nav-right .dropdown {
+  position: relative; /* referencia para el submenu */
+}
+
+.pedido-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;         /* debajo del botón */
+  left: 50%;         /* centrado con respecto al texto */
+  transform: translateX(-100%); /* desplaza el menú hacia la izquierda */
+  background: #d2b48c;
+  border: 1px solid #ccc;
+  min-width: 240px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.pedido-submenu li {
+  padding: 8px 12px;
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  color: var(--blanco);
+  white-space: normal;
+}
+
+.nav-right .dropdown:hover .pedido-submenu {
+  display: block;
+}
+
+/* ================== */
+/* Carrito */
+/* ================== */
+.carrito {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-carrito th, 
+.tabla-carrito td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 15px;
+}
+
+.tabla-carrito th {
+  background: var(--marron-claro);
+  color: var(--blanco);
+  font-family: var(--fuente-titulos);
+}
+
+.carrito-producto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carrito-producto img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.carrito-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.carrito-total h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: var(--fuente-titulos);
+  color: var(--marron-choco);
+}
+
+.btn-finalizar {
+  display: inline-block;
+  background-color: var(--marron-choco);
+  color: var(--blanco);
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-finalizar:hover {
+  background-color: #5a3220;
+}
+
+/* Subtotal + envío */
+.carrito-resumen {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.carrito-resumen p {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  font-family: var(--fuente-body);
+}
+
+.carrito-resumen span {
+  font-weight: bold;
+  color: var(--marron-choco);
+}
+
+/* --- Ajustes específicos para Products layout --- */
+
+/* separa el title del header y del grid de productos */
+.products-page h1,
+.products-page .title-principal {
+  margin: 28px 0 18px; /* ajustá si querés más o menos espacio */
+  color: #4a2e24;      /* marrón oscuro base */
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* si tu template pone <main class="..."> ajustar el selector según corresponda */
+.products-list .producto h3,
+.producto .titulo-producto {
+  margin: 8px 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* quitar subrayado de títulos (links) y poner color marrón oscuro + hover marrón claro */
+.products-list .producto h3 a,
+.producto .titulo-producto a {
+  color: #4a2e24;
+  text-decoration: none;
+}
+.products-list .producto h3 a:hover,
+.producto .titulo-producto a:hover {
+  color: #a67c6a; /* marrón clarito en hover */
+}
+
+/* botón Comprar: texto blanco o marrón clarito, sin subrayado, sin negrita */
+.btn-comprar,
+.producto .btn-comprar,
+.producto .boton-comprar {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;              /* o '#a67c6a' si preferís marrón clarito */
+  background: #8b5e46;         /* fondo marrón; ajustá según tu paleta */
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+}
+.btn-comprar:hover {
+  background: #a67c6a;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* evita que enlaces dentro del producto tomen estilo global de links */
+.products-list .producto a {
+  text-decoration: none;
+}
+
+/* si tienes un link 'Ver detalle' que ahora aparece subrayado,
+   este selector fuerza que no lo haga y muestre 'Comprar' en su lugar
+*/
+.products-list .producto .ver-detalle,
+.producto .ver-detalle {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* si quieres que el título no quede pegado al header global */
+header + main, .site-header + main {
+  margin-top: 12px; /* o 18px según necesidad */
+}
+
+
+.titulo-seccion {
+  color: var(--marron-oscuro);
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.nombre-producto {
+  color: var(--marron-oscuro);
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.precio {
+  color: var(--marron-oscuro);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.btn-comprar {
+  display: inline-block;
+  background-color: var(--marron-oscuro);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: normal;
+  transition: 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: var(--marron-claro);
+}
+
+/* Asegurarnos de que la regla general siga aplicando solo a inputs de texto */
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="password"],
+.formulario input[type="tel"],
+.formulario textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--fuente-body);
+  background-color: var(--beige);
+}
+
+/* Anular reglas para el checkbox (important para evitar que otras reglas lo rompan) */
+.formulario input[type="checkbox"] {
+  width: auto !important;       /* que no tome 100% */
+  height: auto !important;
+  margin: 0 !important;         /* quitar margins extra */
+  padding: 0 !important;
+  transform: none !important;   /* por si hay transform aplicados en otra parte */
+  -webkit-appearance: checkbox;  /* restablece apariencia nativa (opcional) */
+  appearance: checkbox;
+  flex-shrink: 0;               /* que no se encoja/estire dentro del flex container */
+}
+
+/* Forzar que el label no ocupe ancho completo y se ubique junto al checkbox */
+.formulario .checkbox label {
+  display: inline-block;
+  margin: 0;
+  font-family: var(--fuente-body);
+  color: var(--marron-choco);
+  cursor: pointer;
+  white-space: nowrap;   /* evita que el texto se quiebre en varias líneas */
+}
+
+/* Alineación: centrado dentro del formulario, con gap pequeño */
+.formulario .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;              /* ya lo ajustaste a 4px */
+  justify-content: center;
+  margin: 10px 0;
+}

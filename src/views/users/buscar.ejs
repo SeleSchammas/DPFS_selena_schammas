@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+      <main>
+        <!-- Buscador -->
+        <section class="buscar-section">
+          <div class="buscador">
+            <form action="/buscar" method="GET">
+              <input type="text" name="q" placeholder="Buscar...">
+            </form>
+          </div>
+
+          <!-- Categorías -->
+          <nav class="categorias">
+            <a href="/products/carteras">Carteras</a>
+            <a href="/products/mochilas">Mochilas</a>
+            <a href="/products/gafas">Gafas Unisex</a>
+            <a href="/products/accesorios">Accesorios</a>
+          </nav>
+        </section>
+      </main>
+
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>
