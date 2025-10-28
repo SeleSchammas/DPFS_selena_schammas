@@ -1,0 +1,44 @@
+<%- include('../partials/head', { title: title }) %>
+<%- include('../partials/header') %>
+
+<main class="form-producto">
+  <a href="/products" class="volver">← Volver</a>
+  <h1><%= title %></h1>
+
+  <form action="<%= action %>" method="post" enctype="multipart/form-data" class="formulario">
+    <div>
+      <label for="name">Nombre</label>
+      <input id="name" name="name" value="<%= product ? product.name : '' %>" required>
+    </div>
+
+    <div>
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description"><%= product ? product.description : '' %></textarea>
+    </div>
+
+    <div>
+      <label for="price">Precio</label>
+      <input id="price" name="price" type="number" step="1" value="<%= product ? product.price : '' %>">
+    </div>
+
+    <div>
+      <label for="category">Categoría</label>
+      <input id="category" name="category" value="<%= product ? product.category : '' %>">
+    </div>
+
+    <div>
+      <label for="image">Imagen (subir nueva opcional)</label>
+      <input id="image" name="image" type="file" accept="image/*">
+      <% if (product && product.image) { %>
+        <p>Imagen actual:</p>
+        <img src="/img/<%= product.image %>" alt="<%= product.name %>" width="120">
+      <% } %>
+    </div>
+
+    <div>
+      <button type="submit">Guardar</button>
+    </div>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,29 @@
+<%- include('../partials/head', { title: title || producto.name }) %>
+  <%- include('../partials/header') %>
+
+    <main class="detalle-producto">
+      <div class="imagen-principal">
+        <img src="/img/<%= producto.image %>" alt="<%= producto.name %>" />
+      </div>
+
+      <div class="info">
+        <h2>
+          <%= producto.name %>
+        </h2>
+        <p class="precio">$<%= producto.price %>
+        </p>
+        <p>
+          <%= producto.description %>
+        </p>
+
+        <a class="btn-carrito" href="#">AGREGAR AL CARRITO</a>
+
+        <p><a href="/products/edit/<%= producto.id %>">Editar</a></p>
+
+        <form action="/products/delete/<%= producto.id %>" method="POST" style="display:inline;">
+          <button type="submit">Eliminar</button>
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>

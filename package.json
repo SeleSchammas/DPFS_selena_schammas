@@ -1,0 +1,20 @@
+{
+  "name": "dpfs",
+  "version": "1.0.0",
+  "description": "Este sitio será un e-commerce para **Brontë Bags**, un emprendimiento dedicado a la venta de **carteras, mochilas y gafas de sol**.  \r El objetivo es ofrecer accesorios de moda que combinen diseño, estilo y practicidad.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "uuid": "^13.0.0"
+  }
+}
