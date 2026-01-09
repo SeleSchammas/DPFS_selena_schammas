@@ -1,0 +1,140 @@
+/* Sección Carteras, Mochilas, Gafas y Accesorios */
+
+.titulo-seccion {
+  font-family: var(--fuente-titulos);
+  font-size: 20px;
+  color: #7a3e20;
+  margin: 30px 0 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.producto {
+  background-color: #fdfcfb;
+  border: 0.5px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+}
+
+.imagen-galeria {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border: 0.5px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.producto h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  color: #4a2e14;
+}
+
+.precio {
+  font-size: 16px;
+  color: #7a3e20;
+  margin-bottom: 12px;
+}
+
+.btn-comprar {
+  background-color: #a6783a;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #7a3e20;
+}
+
+/* Links dentro de productos */
+.producto h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.producto h3 a:hover {
+  color: var(--marron-claro);
+}
+
+.products-page h1,
+.products-page .title-principal {
+  margin: 28px 0 18px;
+  color: #4a2e24;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* =========================
+   FORMULARIO CREATE / EDIT
+   ========================= */
+
+.form-producto {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fdfcfb;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.form-producto h1 {
+  text-align: center;
+  color: var(--marron-choco);
+  margin-bottom: 30px;
+  font-family: var(--fuente-titulos);
+}
+
+.form-producto .volver {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: var(--marron-choco);
+  font-weight: bold;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulario label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.formulario button {
+  background-color: var(--marron-choco);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #5a3220;
+}

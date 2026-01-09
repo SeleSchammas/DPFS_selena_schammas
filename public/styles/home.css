@@ -1,0 +1,41 @@
+/* =========================
+   HOME
+   ========================= */
+
+/* Secciones del home */
+main section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Títulos de sección */
+main section h2 {
+  font-family: var(--fuente-titulos);
+  color: var(--marron-choco);
+  margin-bottom: 15px;
+}
+
+main section h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main section h2 a:hover {
+  text-decoration: underline;
+}
+
+/* Grid de imágenes del home */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Imágenes del home */
+.grid img {
+  width: 90%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}

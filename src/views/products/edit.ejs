@@ -1,30 +1,41 @@
-<%- include('../partials/head', { title: title || 'Editar producto' }) %>
-<%- include('../partials/header') %>
+<%- include('../partials/head', { title: title || 'Editar producto' }) %> <%-
+include('../partials/header') %>
 
-<main style="padding: 40px;">
+<main style="padding: 40px">
   <h2>Editar producto</h2>
 
-  <form id="formEdit" action="/products/edit/<%= product.id %>" method="POST" data-id="<%= product.id %>" enctype="multipart/form-data">
+  <form
+    action="/products/edit/<%= product.id %>"
+    method="POST"
+    enctype="multipart/form-data"
+  >
     <div class="form-group">
-      <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" value="<%= product.name %>" required />
+      <label>Nombre</label>
+      <input type="text" name="name" value="<%= product.name %>" />
+      <% if (errors.name) { %><small style="color: red"
+        ><%= errors.name %></small
+      ><% } %>
     </div>
 
     <div class="form-group">
-      <label for="price">Precio</label>
-      <input type="number" id="price" name="price" value="<%= product.price %>" required />
+      <label>Precio</label>
+      <input type="number" name="price" value="<%= product.price %>" />
+      <% if (errors.price) { %><small style="color: red"
+        ><%= errors.price %></small
+      ><% } %>
     </div>
 
     <div class="form-group">
-      <label for="description">Descripción</label>
-      <textarea id="description" name="description" rows="4" required><%= product.description %></textarea>
+      <label>Descripción</label>
+      <textarea name="description"><%= product.description %></textarea>
+      <% if (errors.description) { %><small style="color: red"
+        ><%= errors.description %></small
+      ><% } %>
     </div>
 
     <div class="form-group">
-      <label>Imagen actual</label><br />
-      <img src="/img/products/<%= product.image %>" alt="<%= product.name %>" width="150" /><br /><br />
-      <label for="image">Cambiar imagen</label>
-      <input type="file" id="image" name="image" accept="image/*" />
+      <label>Imagen</label>
+      <input type="file" name="image" />
     </div>
 
     <button type="submit">Actualizar producto</button>

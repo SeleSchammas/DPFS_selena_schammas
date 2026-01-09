@@ -1,0 +1,35 @@
+:root {
+  --marron-choco: #6b4226;
+  --marron-claro: #d9b999;
+  --beige: #f5f0e1;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --fuente-titulos: "Libre Baskerville", serif;
+  --fuente-body: "Merriweather Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-body);
+  background-color: var(--beige);
+  color: var(--negro);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Reset básico de imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

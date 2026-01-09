@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="cuenta">
+      <div class="formulario">
+        <h2>Crear Cuenta</h2>
+
+        <form method="POST" action="/users/register">
+          <!-- Nombre -->
+          <label for="nombre">Nombre y Apellido</label>
+          <input
+            type="text"
+            id="nombre"
+            name="fullname"
+            placeholder="Ingresá tu nombre completo"
+            value="<%= oldData.fullname || '' %>"
+            class="<%= errors.fullname ? 'input-error' : '' %>"
+          />
+          <% if (errors.fullname) { %>
+          <div class="error"><%= errors.fullname.msg %></div>
+          <% } %>
+
+          <!-- Email -->
+          <label for="email-registro">Email</label>
+          <input
+            type="email"
+            id="email-registro"
+            name="email"
+            placeholder="Ingresá tu email"
+            value="<%= oldData.email || '' %>"
+            class="<%= errors.email ? 'input-error' : '' %>"
+          />
+          <% if (errors.email) { %>
+          <div class="error"><%= errors.email.msg %></div>
+          <% } %>
+
+          <!-- Contraseña -->
+          <label for="password-registro">Contraseña</label>
+          <input
+            type="password"
+            id="password-registro"
+            name="password"
+            placeholder="Creá una contraseña"
+            class="<%= errors.password ? 'input-error' : '' %>"
+          />
+          <% if (errors.password) { %>
+          <div class="error"><%= errors.password.msg %></div>
+          <% } %>
+
+          <!-- Confirmar contraseña -->
+          <label for="confirmar-password">Confirmar Contraseña</label>
+          <input
+            type="password"
+            id="confirmar-password"
+            name="passwordConfirm"
+            placeholder="Repetí tu contraseña"
+            class="<%= errors.passwordConfirm ? 'input-error' : '' %>"
+          />
+          <% if (errors.passwordConfirm) { %>
+          <div class="error"><%= errors.passwordConfirm.msg %></div>
+          <% } %>
+
+          <!-- Términos -->
+          <div class="checkbox">
+            <input type="checkbox" id="terminos" name="terminos" value="1" <%=
+            oldData.terminos ? 'checked' : '' %> />
+            <label for="terminos">Acepto los términos y condiciones</label>
+          </div>
+          <% if (errors.terminos) { %>
+          <div class="error"><%= errors.terminos.msg %></div>
+          <% } %>
+
+          <button type="submit">CREAR CUENTA</button>
+
+          <p>
+            ¿Ya tenés cuenta?
+            <a href="/users/login">Iniciá sesión</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+/* Página de Detalle Producto */
+
+.detalle-producto {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  align-items: flex-start;
+}
+
+.imagen-principal img {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: var(--fuente-titulos);
+}
+
+.info h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.info .precio {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Botón principal - Agregar al carrito */
+.btn-carrito {
+  display: inline-block;
+  background-color: var(--marron-choco);
+  color: var(--blanco);
+  padding: 10px 20px; /* apenas más grande */
+  border-radius: 25px;
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+}
+
+.btn-carrito:hover {
+  background-color: #7a3e20;
+}
+
+/* Contenedor de botones secundarios */
+.acciones-secundarias {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Botones secundarios (Editar / Eliminar) */
+.btn-secundario {
+  background-color: var(--marron-choco);
+  color: white;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--fuente-titulos);
+  text-align: center;
+}
+
+.btn-secundario:hover {
+  background-color: #7a3e20;
+}
+
+/* Botón eliminar */
+.btn-danger {
+  background-color: #af3333;
+}
+
+.btn-danger:hover {
+  background-color: #c25555;
+}
+
+.form-eliminar {
+  display: inline;
+}

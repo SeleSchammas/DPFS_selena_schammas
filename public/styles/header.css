@@ -1,0 +1,159 @@
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--marron-choco);
+  padding: 8px 16px;
+  border-radius: 0 0 20px 20px;
+  color: var(--blanco);
+}
+
+/* === NAVS IZQ Y DER (IGUALES) === */
+.nav-left,
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Links generales */
+.nav-left a,
+.nav-left li,
+.nav-right a,
+.nav-right button {
+  color: var(--blanco);
+  text-decoration: none;
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 3px 10px;
+  transition: color 0.3s, background 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right a:hover,
+.nav-right button:hover {
+  color: var(--marron-claro);
+}
+
+/* Eliminar puntitos */
+.nav-left ul,
+.nav-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 33px;
+  color: var(--marron-claro);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo a:hover h1 {
+  color: var(--beige);
+}
+
+/* ================= DROPDOWNS ================= */
+
+.dropdown {
+  position: relative;
+}
+
+/* Submenú genérico */
+.submenu,
+.user-submenu,
+.pedido-submenu {
+  display: none;
+  position: absolute;
+  background: #d2b48c;
+  border: 1px solid #ccc;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 2000;
+  border-radius: 6px;
+}
+
+/* === PRODUCTOS (izquierda) === */
+.submenu {
+  top: 0;
+  left: 100%;
+  min-width: 180px;
+}
+
+/* === MI PERFIL (derecha) === */
+.user-menu {
+  position: relative;
+}
+
+.user-submenu {
+  top: 100%;
+  right: 0;
+  min-width: 180px;
+}
+
+/* === MI PEDIDO === */
+.pedido-submenu {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-100%);
+  min-width: 240px;
+}
+
+/* Items de submenú (a y button IGUALES) */
+.submenu li a,
+.user-submenu li a,
+.user-submenu li button,
+.pedido-submenu li {
+  display: block;
+  padding: 10px 14px;
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  color: var(--blanco);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.submenu li a:hover,
+.user-submenu li a:hover,
+.user-submenu li button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Mostrar dropdowns */
+.dropdown:hover .submenu,
+.user-menu:hover .user-submenu,
+.dropdown:hover .pedido-submenu {
+  display: block;
+}

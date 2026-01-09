@@ -1,0 +1,89 @@
+/* Carrito */
+.carrito {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-carrito th,
+.tabla-carrito td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 15px;
+}
+
+.tabla-carrito th {
+  background: var(--marron-claro);
+  color: var(--blanco);
+  font-family: var(--fuente-titulos);
+}
+
+.carrito-producto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carrito-producto img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.carrito-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.carrito-total h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: var(--fuente-titulos);
+  color: var(--marron-choco);
+}
+
+.btn-finalizar {
+  display: inline-block;
+  background-color: var(--marron-choco);
+  color: var(--blanco);
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-finalizar:hover {
+  background-color: #5a3220;
+}
+
+/* Subtotal + envío */
+.carrito-resumen {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.carrito-resumen p {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  font-family: var(--fuente-body);
+}
+
+.carrito-resumen span {
+  font-weight: bold;
+  color: var(--marron-choco);
+}

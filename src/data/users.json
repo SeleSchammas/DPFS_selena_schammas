@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sele",
+    "lastName": "Schammas",
+    "email": "schammasselena@gmail.com",
+    "password": "$2b$10$lCIOZO4wfSBBuDOTCakjoul84tNSjRKF2Wsh0RWpTPPGXLVv.FnSa",
+    "category": "user",
+    "image": "users/default.jpg"
+  }
+]

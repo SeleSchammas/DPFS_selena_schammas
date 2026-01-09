@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="perfil">
+      <div class="perfil-container">
+        <h1>Mi cuenta</h1>
+
+        <% if (user) { %>
+        <div class="perfil-datos">
+          <p><strong>Nombre:</strong> <%= user.name %></p>
+          <p><strong>Email:</strong> <%= user.email %></p>
+        </div>
+
+        <form action="/users/logout" method="POST">
+          <button type="submit" class="btn-logout">Cerrar sesión</button>
+        </form>
+        <% } else { %>
+        <p>No hay usuario logueado.</p>
+        <a href="/users/login" class="btn-volver">Ir a Iniciar Sesión</a>
+        <% } %>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

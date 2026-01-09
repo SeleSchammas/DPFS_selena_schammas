@@ -1,0 +1,47 @@
+/* ================= BUSCAR ================= */
+
+.buscar-main {
+  max-width: 900px;
+  margin: 5px auto;
+  padding: 0 20px;
+}
+
+/* Buscador */
+.buscador {
+  display: block;
+  justify-content: center;
+  background: var(--marron-claro);
+  border-radius: 20px;
+}
+
+.buscador input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  font-family: var(--fuente-body);
+  padding: 10px 40px;
+}
+
+/* Categorías */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.categorias a {
+  font-family: var(--fuente-titulos);
+  font-size: 18px;
+  color: var(--marron-choco);
+  text-decoration: none;
+  border-bottom: 2px dotted var(--marron-choco);
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.categorias a:hover {
+  color: var(--marron-claro);
+}

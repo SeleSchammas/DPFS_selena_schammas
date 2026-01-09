@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="cuenta">
+      <div class="formulario">
+        <h2>Iniciar Sesión</h2>
+
+        <form method="POST" action="/users/login">
+          <!-- Email -->
+          <label for="email-login">Email</label>
+          <input
+            type="email"
+            id="email-login"
+            name="email"
+            placeholder="Ingresá tu email"
+            value="<%= oldData.email || '' %>"
+            class="<%= (errors.email || errors.credentials) ? 'input-error' : '' %>"
+          />
+          <% if (errors.email) { %>
+          <div class="error"><%= errors.email.msg %></div>
+          <% } %>
+
+          <!-- Contraseña -->
+          <label for="password-login">Contraseña</label>
+          <input
+            type="password"
+            id="password-login"
+            name="password"
+            placeholder="Ingresá tu contraseña"
+            class="<%= errors.password ? 'input-error' : '' %>"
+          />
+          <% if (errors.password) { %>
+          <div class="error"><%= errors.password.msg %></div>
+          <% } %>
+
+          <!-- Error de credenciales -->
+          <% if (errors.credentials) { %>
+          <div class="error"><%= errors.credentials.msg %></div>
+          <% } %>
+
+          <!-- Recordarme -->
+          <div class="checkbox">
+            <input type="checkbox" id="recordarme" name="recordarme" />
+            <label for="recordarme">Recordarme</label>
+          </div>
+
+          <button type="submit">INGRESAR</button>
+
+          <p>
+            ¿No tenés cuenta?
+            <a href="/users/register">Registrate</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

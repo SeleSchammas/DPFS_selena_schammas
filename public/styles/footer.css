@@ -1,0 +1,24 @@
+/* Footer */
+.footer {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.footer-socials a {
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  color: var(--marron-claro);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--marron-choco);
+}

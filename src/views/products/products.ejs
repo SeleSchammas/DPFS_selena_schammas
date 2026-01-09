@@ -1,20 +1,22 @@
-<%- include('../partials/head', { title: title || 'Productos' }) %>
-<%- include('../partials/header') %>
+<%- include('../partials/head', { title: title || 'Productos' }) %> <%-
+include('../partials/header') %>
 
 <main>
   <h2 class="titulo-seccion">Productos</h2>
   <div class="galeria">
-    <% if (productos && productos.length) { %>
-      <% productos.forEach(prod => { %>
-        <div class="producto">
-          <img src="/img/<%= prod.image %>" alt="<%= prod.name %>" class="imagen-galeria" />
-          <h3 class="nombre-producto"><%= prod.name %></h3>
-          <p class="precio">$<%= prod.price %></p>
-          <a class="btn-comprar" href="/products/detail/<%= prod.id %>">Comprar</a>
-        </div>
-      <% }) %>
-    <% } else { %>
-      <p>No hay productos para mostrar.</p>
+    <% if (productos && productos.length) { %> <% productos.forEach(prod => { %>
+    <div class="producto">
+      <img
+        src="/img/<%= prod.image %>"
+        alt="<%= prod.name %>"
+        class="imagen-galeria"
+      />
+      <h3 class="nombre-producto"><%= prod.name %></h3>
+      <p class="precio">$<%= prod.price %></p>
+      <a class="btn-comprar" href="/products/<%= prod.id %>">Comprar</a>
+    </div>
+    <% }) %> <% } else { %>
+    <p>No hay productos para mostrar.</p>
     <% } %>
   </div>
 </main>

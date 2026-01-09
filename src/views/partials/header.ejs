@@ -1,12 +1,10 @@
 <header class="header">
+  <!-- NAV IZQUIERDA -->
   <nav class="nav-left">
     <ul class="menu-izquierdo">
       <li class="dropdown">
-        <!-- Enlace principal: listado dinámico -->
         <a href="/products" class="dropbtn">Productos</a>
 
-        <!-- Si preferís mantener las páginas por categoría (estáticas) 
-             podés dejar estos enlaces tal cual y no usarlos con JSON: -->
         <ul class="submenu">
           <li><a href="/products">Todos los productos</a></li>
           <li><a href="/carteras">Carteras</a></li>
@@ -20,21 +18,45 @@
     </ul>
   </nav>
 
+  <!-- LOGO -->
   <div class="logo">
     <a href="/" class="logo-link">
-      <img src="/img/logo.png" alt="Logo Brontë Bags">
+      <img src="/img/logo.png" alt="Logo Brontë Bags" />
       <h1 class="libre-baskerville-bold">Brontë Bags</h1>
     </a>
   </div>
 
+  <!-- NAV DERECHA -->
   <nav class="nav-right">
-    <a href="/cuenta">Cuenta</a>
+    <% if (!userLogged) { %>
+    <a href="/users/login">Cuenta</a>
+    <% } else { %>
+    <div class="user-menu">
+      <a class="dropbtn">Hola, <%= userLogged.name %> ▼</a>
+
+      <ul class="user-submenu">
+        <li><a href="/users/profile">Mi Perfil</a></li>
+        <li>
+          <form
+            action="/users/logout"
+            method="POST"
+            style="margin: 0; padding: 0"
+          >
+            <button type="submit" class="logout-btn">Cerrar Sesión</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
+    <% } %>
+
     <div class="dropdown">
       <a href="/carrito" class="dropbtn">Mi Pedido</a>
       <ul class="pedido-submenu">
         <li>Aún no tienes productos en tu pedido, ¡elige algo para agregar!</li>
       </ul>
     </div>
+
     <a href="/buscar">Buscar</a>
   </nav>
 </header>

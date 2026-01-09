@@ -1,30 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<%- include('../partials/head') %>
+  <%- include('../partials/head') %>
 
   <body>
     <%- include('../partials/header') %>
 
-      <main>
-        <!-- Buscador -->
-        <section class="buscar-section">
-          <div class="buscador">
-            <form action="/buscar" method="GET">
-              <input type="text" name="q" placeholder="Buscar...">
-            </form>
-          </div>
+    <main class="buscar-main">
+      <section class="buscar-section">
+        <div class="buscador">
+          <form action="/buscar" method="GET">
+            <input
+              type="text"
+              name="q"
+              placeholder="Buscar productos..."
+              value="<%= typeof q !== 'undefined' ? q : '' %>"
+            />
+          </form>
+        </div>
 
-          <!-- Categorías -->
-          <nav class="categorias">
-            <a href="/carteras">Carteras</a>
-            <a href="/mochilas">Mochilas</a>
-            <a href="/gafas">Gafas Unisex</a>
-            <a href="/accesorios">Accesorios</a>
-          </nav>
-        </section>
-      </main>
+        <nav class="categorias">
+          <a href="/carteras">Carteras</a>
+          <a href="/mochilas">Mochilas</a>
+          <a href="/gafas">Gafas Unisex</a>
+          <a href="/accesorios">Accesorios</a>
+        </nav>
+    </main>
 
-      <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
-
 </html>

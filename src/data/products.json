@@ -2,8 +2,8 @@
   {
     "id": "bag_romana",
     "name": "Bag Romana",
-    "description": "Cartera Bag Romana elegante",
-    "price": 30000,
+    "description": "Cartera con cintos, edicion Romana",
+    "price": 32000,
     "image": "products/bag_romana.jpg",
     "category": "carteras"
   },

@@ -1,93 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<%- include('../partials/head') %>
-
+  <%- include('../partials/head') %>
   <body>
     <%- include('../partials/header') %>
 
-      <main class="carrito">
-        <h2 class="titulo-seccion">Tu Carrito (Ejemplo)</h2>
-        <div class="carrito-contenido">
-          <table class="tabla-carrito">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="carrito-producto">
-                  <img src="/img/products/bag_romana.jpg" alt="Producto 1">
-                  <span>Bag Romana</span>
-                </td>
-                <td>$30.000</td>
-                <td>1</td>
-                <td>$30.000</td>
-              </tr>
-              <tr>
-                <td class="carrito-producto">
-                  <img src="/img/products/bag_vera.jpeg" alt="Producto 2">
-                  <span>Bag Vera Charol</span>
-                </td>
-                <td>$32.000</td>
-                <td>1</td>
-                <td>$32.000</td>
-              </tr>
-              <tr>
-                <td class="carrito-producto">
-                  <img src="/img/products/mochila-maui-beige.jpg" alt="Producto 3">
-                  <span>Mochila Maui Beige</span>
-                </td>
-                <td>$50.000</td>
-                <td>1</td>
-                <td>$50.000</td>
-              </tr>
-              <tr>
-                <td class="carrito-producto">
-                  <img src="/img/products/gafas_california.JPEG" alt="Producto 4">
-                  <span>Gafas California</span>
-                </td>
-                <td>$15.000</td>
-                <td>1</td>
-                <td>$15.000</td>
-              </tr>
-              <tr>
-                <td class="carrito-producto">
-                  <img src="/img/products/pulsera_tachas.jpeg" alt="Producto 5">
-                  <span>Pulsera Tachas</span>
-                </td>
-                <td>$18.000</td>
-                <td>1</td>
-                <td>$18.000</td>
-              </tr>
-              <tr>
-                <td class="carrito-producto">
-                  <img src="/img/products/set_ancla_cuero.jpeg" alt="Producto 6">
-                  <span>Set Ancla Cuero</span>
-                </td>
-                <td>$18.000</td>
-                <td>1</td>
-                <td>$18.000</td>
-              </tr>
-            </tbody>
-          </table>
+    <main class="carrito">
+      <h2 class="titulo-seccion">Tu Carrito</h2>
 
-          <div class="carrito-total">
-            <div class="carrito-resumen">
-              <p>Subtotal (sin envío): <span>$170.000</span></p>
-              <p>Envío: <span>$15.000</span></p>
-            </div>
+      <div class="carrito-contenido">
+        <table class="tabla-carrito">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
 
-            <h3>Total: $185.000</h3>
-            <a href="/checkout" class="btn-finalizar">Finalizar Compra</a>
+          <tbody>
+            <tr>
+              <td class="carrito-producto">
+                <img src="/img/products/bag_vera.jpeg" alt="Bag Vera Charol" />
+                <span>Bag Vera Charol</span>
+              </td>
+              <td>$32.000</td>
+              <td>1</td>
+              <td>$32.000</td>
+            </tr>
+
+            <tr>
+              <td class="carrito-producto">
+                <img
+                  src="/img/products/mochila-climb.jpg"
+                  alt="Mochila Climb"
+                />
+                <span>Mochila Climb</span>
+              </td>
+              <td>$52.000</td>
+              <td>1</td>
+              <td>$52.000</td>
+            </tr>
+
+            <tr>
+              <td class="carrito-producto">
+                <img
+                  src="/img/products/mochila-maui-beige.jpg"
+                  alt="Mochila Maui Beige"
+                />
+                <span>Mochila Maui Beige</span>
+              </td>
+              <td>$50.000</td>
+              <td>1</td>
+              <td>$50.000</td>
+            </tr>
+
+            <tr>
+              <td class="carrito-producto">
+                <img
+                  src="/img/products/gafas_california.JPEG"
+                  alt="Gafas California"
+                />
+                <span>Gafas California</span>
+              </td>
+              <td>$15.000</td>
+              <td>1</td>
+              <td>$15.000</td>
+            </tr>
+
+            <tr>
+              <td class="carrito-producto">
+                <img src="/img/products/gafas_cairo.JPEG" alt="Gafas Cairo" />
+                <span>Gafas Cairo</span>
+              </td>
+              <td>$15.000</td>
+              <td>1</td>
+              <td>$15.000</td>
+            </tr>
+
+            <tr>
+              <td class="carrito-producto">
+                <img
+                  src="/img/products/collar_malaquita.jpeg"
+                  alt="Collar Malaquita"
+                />
+                <span>Collar Malaquita</span>
+              </td>
+              <td>$25.000</td>
+              <td>1</td>
+              <td>$25.000</td>
+            </tr>
+
+            <tr>
+              <td class="carrito-producto">
+                <img src="/img/products/set_x4_cuero.jpeg" alt="Set X4 Cuero" />
+                <span>Set X4 Cuero</span>
+              </td>
+              <td>$33.000</td>
+              <td>2</td>
+              <td>$66.000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="carrito-total">
+          <div class="carrito-resumen">
+            <p>Subtotal (sin envío): <span>$256.000</span></p>
+            <p>Envío: <span>$15.000</span></p>
           </div>
+
+          <h3>Total: $271.000</h3>
+          <a href="/checkout" class="btn-finalizar">Finalizar Compra</a>
         </div>
-      </main>
+      </div>
+    </main>
 
-      <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
-
 </html>
