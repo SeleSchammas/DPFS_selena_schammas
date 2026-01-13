@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");

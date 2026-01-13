@@ -1,6 +1,7 @@
 const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
+const upload = require("../middlewares/uploadUserImage");
 
 const userController = require("../controllers/userController");
 
@@ -59,6 +60,7 @@ router.post("/login", guestMiddleware, loginValidations, userController.login);
 router.post(
   "/register",
   guestMiddleware,
+  upload.single("image"),
   registerValidations,
   userController.register
 );

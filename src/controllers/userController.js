@@ -52,10 +52,13 @@ const userController = {
       });
     }
 
+    const image = req.file ? "users/" + req.file.filename : "users/default.jpg";
+
     const newUser = User.create({
       name: fullname,
       email,
       password,
+      image,
     });
 
     req.session.userLogged = newUser;
@@ -121,7 +124,7 @@ const userController = {
   // =====================
 
   logout: (req, res) => {
-    req.session.userLogged = null;
+    res.clearCookie("userEmail");
     req.session.destroy(() => {
       res.redirect("/users/login");
     });
