@@ -91,6 +91,13 @@ const userController = {
     }
 
     req.session.userLogged = user;
+
+    if (req.body.recordarme) {
+      res.cookie("userEmail", user.email, {
+        maxAge: 1000 * 60 * 60 * 24,
+      });
+    }
+
     return res.redirect("/users/profile");
   },
 

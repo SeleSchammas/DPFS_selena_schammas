@@ -1,32 +1,22 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const app = express();
 const session = require("express-session");
 const methodOverride = require("method-override");
+const cookieParser = require("cookie-parser");
+
+const app = express();
 
 // ------------------ Settings / view engine ------------------
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src", "views"));
 
-// --- DEBUG ---
-const viewsDir = path.join(__dirname, "src", "views");
-console.log("DEBUG → Express buscará vistas en:", viewsDir);
-console.log(
-  "DEBUG → index.ejs existe?:",
-  fs.existsSync(path.join(viewsDir, "index.ejs"))
-);
-try {
-  console.log("DEBUG → contenido src/views:", fs.readdirSync(viewsDir));
-} catch (e) {
-  console.log("DEBUG → lectura src/views falló:", e.message);
-}
-
-// ------------------ Middlewares ------------------
+// ------------------ Middlewares base ------------------
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
+app.use(cookieParser());
 
 // ------------------ Session ------------------
 app.use(
@@ -37,7 +27,7 @@ app.use(
   })
 );
 
-// 👉 Middleware que carga userLogged en todas las vistas
+// 👉 Middleware global de usuario logueado
 const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 app.use(userLoggedMiddleware);
 
@@ -48,7 +38,7 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Home - Bronte Bags" });
 });
 
-// Secciones
+// ------------------ Secciones públicas ------------------
 app.get("/productos", (req, res) =>
   res.render("products/todos", { title: "Productos - Bronte Bags" })
 );
@@ -73,24 +63,15 @@ app.get("/sale", (req, res) =>
   res.render("products/sale", { title: "SALE - Bronte Bags" })
 );
 
-// Montar routes de products
+// ------------------ Routes ------------------
+
+// Products
 const productsRoutes = require("./src/routes/productsRoute");
 app.use("/products", productsRoutes);
 
-// Montar routes de users
+// Users (login, register, profile, logout)
 const userRoutes = require("./src/routes/userRoutes");
 app.use("/users", userRoutes);
-
-// ------------------ Ruta dinámica de productos individuales ------------------
-function beautifySlug(slug) {
-  return slug
-    .replace(/\.(ejs|html|es|htm)$/i, "")
-    .replace(/[_\-]+/g, " ")
-    .trim()
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
 
 // ------------------ Carrito ------------------
 app.get("/carrito", (req, res) => {
@@ -98,7 +79,6 @@ app.get("/carrito", (req, res) => {
 });
 
 // ------------------ Buscar ------------------
-
 app.get("/buscar", (req, res) => {
   res.render("users/buscar", { title: "Buscar - Bronte Bags" });
 });

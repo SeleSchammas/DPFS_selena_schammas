@@ -30,6 +30,10 @@ const registerValidations = [
   body("passwordConfirm")
     .custom((value, { req }) => value === req.body.password)
     .withMessage("Las contraseñas no coinciden"),
+
+  body("terminos")
+    .equals("1")
+    .withMessage("Debés aceptar los términos y condiciones"),
 ];
 
 const loginValidations = [

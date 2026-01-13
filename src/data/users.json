@@ -1,11 +1,17 @@
 [
   {
     "id": 1,
-    "firstName": "Sele",
-    "lastName": "Schammas",
+    "name": "Sele Schammas",
     "email": "schammasselena@gmail.com",
     "password": "$2b$10$lCIOZO4wfSBBuDOTCakjoul84tNSjRKF2Wsh0RWpTPPGXLVv.FnSa",
     "category": "user",
     "image": "users/default.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Maria Test",
+    "email": "maria.test@example.com",
+    "password": "$2b$10$MVi53qy1he//6BOkJIvjyucP.zfPM1WLw5tTVhSts0.3OrhsoTaKi",
+    "role": "user"
   }
 ]
