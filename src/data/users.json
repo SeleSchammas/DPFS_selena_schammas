@@ -1,17 +1,34 @@
 [
   {
     "id": 1,
-    "name": "Sele Schammas",
-    "email": "schammasselena@gmail.com",
-    "password": "$2b$10$lCIOZO4wfSBBuDOTCakjoul84tNSjRKF2Wsh0RWpTPPGXLVv.FnSa",
-    "category": "user",
-    "image": "users/default.jpg"
+    "name": "Sele",
+    "email": "sele@test.com",
+    "password": "$2b$10$802oXjxUpbtRm2yTCi9iwOgxwBob9EHFv3gwxDhf3SvzZsQopoir6",
+    "image": "users/user-1768423039734.jpg",
+    "role": "user"
   },
   {
-    "id": 2,
-    "name": "Maria Test",
-    "email": "maria.test@example.com",
-    "password": "$2b$10$MVi53qy1he//6BOkJIvjyucP.zfPM1WLw5tTVhSts0.3OrhsoTaKi",
+    "id": 1,
+    "name": "Sele",
+    "email": "ssch@test.com",
+    "password": "$2b$10$jnNNuDqllAE7c68KX0OXwOXYlu9G5y4cATYqc2m9D7yt5nSVKICMW",
+    "image": "users/default.jpg",
+    "role": "user"
+  },
+  {
+    "id": 1,
+    "name": "Sandra",
+    "email": "sandra@test.com",
+    "password": "$2b$10$MlKHncJIh9cQgthTrtgcme8fecysu6EkVUuIhkkMrur0E415ceV9O",
+    "image": "users/user-1768424330618.jpg",
+    "role": "user"
+  },
+  {
+    "id": 1,
+    "name": "mary",
+    "email": "maria@test.com",
+    "password": "$2b$10$J99KXXeH10RQVqrLhtyxOOwbE5nMrLWed/Q9fAClSO1GRXakwCRHa",
+    "image": "users/user-1768427417897.jpg",
     "role": "user"
   }
 ]
