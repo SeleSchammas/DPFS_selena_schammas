@@ -25,29 +25,24 @@ const User = {
   },
 
   // Crea un nuevo usuario
+
   create: function (userData) {
     const users = this.getAll();
+
     const newUser = {
-      id: users.length ? users[users.length - 1].id + 1 : 1,
+      id: users.lengthh ? users[user.length - 1].id + 1 : 1,
       name: userData.name,
       email: userData.email,
       password: bcrypt.hashSync(userData.password, 10),
-      role: userData.role || "user",
+      image: userData.image || "users/default.jpg",
+      role: "user",
     };
 
     users.push(newUser);
+
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+
     return newUser;
   },
-
-  // Valida el login del usuario
-  validateLogin: function (email, password) {
-    const user = this.findByEmail(email);
-    if (user && bcrypt.compareSync(password, user.password)) {
-      return user;
-    }
-    return null;
-  },
 };
-
 module.exports = User;

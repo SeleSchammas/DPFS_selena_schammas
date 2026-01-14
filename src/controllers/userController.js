@@ -27,39 +27,53 @@ const userController = {
   // =====================
   // PROCESAR REGISTRO
   // =====================
-
   register: (req, res) => {
+    console.log("ENTRO AL REGISTRO");
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
       return res.render("users/register", {
         title: "Registrarse",
-        userLogged: req.session.userLogged || null,
         errors: errors.mapped(),
         oldData: req.body,
       });
     }
 
-    const { fullname, email, password } = req.body;
+    try {
+      const { fullname, email, password } = req.body;
 
-    const existingUser = User.findByEmail(email);
-    if (existingUser) {
-      return res.render("users/register", {
-        title: "Registrarse",
-        userLogged: req.session.userLogged || null,
-        errors: { email: { msg: "El correo ya está registrado" } },
-        oldData: req.body,
+      const existingUser = User.findByEmail(email);
+      if (existingUser) {
+        return res.render("users/register", {
+          title: "Registrarse",
+          errors: { email: { msg: "El correo ya esta registrado" } },
+          oldData: req.body,
+        });
+      }
+
+      const image = req.file
+        ? `users/${req.file.filename}`
+        : "users/default.jpg";
+
+      const newUser = User.create({
+        name: fullname,
+        email,
+        password,
+        image,
       });
+
+      console.log("USUARIO CREADO: ", newUser);
+
+      req.session.userLogged = newUser;
+
+      return res.redirect("/users/profile");
+    } catch (error) {
+      console.error("ERROR EN REGISTER: ", error);
+      return res.status(500).send("Error al registrar usuario");
     }
-
-    const newUser = User.create({
-      name: fullname,
-      email,
-      password,
-    });
-
-    req.session.userLogged = newUser;
-    return res.redirect("/users/profile");
   },
 
   // =====================
@@ -91,6 +105,13 @@ const userController = {
     }
 
     req.session.userLogged = user;
+
+    if (req.body.recordarme) {
+      res.cookie("userEmail", user.email, {
+        maxAge: 1000 * 60 * 60 * 24,
+      });
+    }
+
     return res.redirect("/users/profile");
   },
 
@@ -114,6 +135,7 @@ const userController = {
   // =====================
 
   logout: (req, res) => {
+    res.clearCookie("userEmail");
     req.session.destroy(() => {
       res.redirect("/users/login");
     });

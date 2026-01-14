@@ -9,7 +9,16 @@
       <div class="formulario">
         <h2>Crear Cuenta</h2>
 
-        <form method="POST" action="/users/register">
+        <form
+          method="POST"
+          action="/users/register"
+          enctype="multipart/form-data"
+        >
+          <!-- Imágen de Perfil -->
+
+          <label for="image">Foto de perfil</label>
+          <input type="file" name="image" id="image" />
+
           <!-- Nombre -->
           <label for="nombre">Nombre y Apellido</label>
           <input

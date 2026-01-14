@@ -1,6 +1,7 @@
 const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
+const upload = require("../middlewares/uploadUserImage");
 
 const userController = require("../controllers/userController");
 
@@ -30,6 +31,10 @@ const registerValidations = [
   body("passwordConfirm")
     .custom((value, { req }) => value === req.body.password)
     .withMessage("Las contraseñas no coinciden"),
+
+  body("terminos")
+    .equals("1")
+    .withMessage("Debés aceptar los términos y condiciones"),
 ];
 
 const loginValidations = [
@@ -55,6 +60,7 @@ router.post("/login", guestMiddleware, loginValidations, userController.login);
 router.post(
   "/register",
   guestMiddleware,
+  upload.single("image"),
   registerValidations,
   userController.register
 );

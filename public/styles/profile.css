@@ -15,6 +15,13 @@
   text-align: center;
 }
 
+.perfil-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .perfil-datos p {
   margin: 10px 0;
   font-size: 1.1rem;
@@ -28,9 +35,25 @@
   font-family: var(--fuente-titulos);
 }
 
+.perfil-img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.perfil-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c49a6c;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  background-color: #f3f3f3;
+}
+
 .btn-logout,
 .btn-volver {
-  background-color: #000;
+  background-color: var(--marron-choco);
   color: #fff;
   border: none;
   padding: 10px 20px;
