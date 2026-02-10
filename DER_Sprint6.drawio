@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.3.1">
+  <diagram name="Página-1" id="pk0Fm6rhFB_ncoYyr9YJ">
+    <mxGraphModel dx="872" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="17rrbUKbdvpT3q8fTd5K-32" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Helvetica;align=left;rotation=0;fontSize=13;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;users&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;--------------------------------&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;id (PK)&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;name&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;email (UNIQUE)&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;password&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;avatar&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;role&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;createdAt&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;updatedAt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="144" x="10" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="17rrbUKbdvpT3q8fTd5K-40" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="103" as="sourcePoint" />
+            <mxPoint x="590" y="103" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17rrbUKbdvpT3q8fTd5K-33" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Helvetica;align=left;rotation=0;fontSize=13;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;categories&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;-------------------------------&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;id (PK)&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;name&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;createdAt&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;updatedAt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="112" x="270" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="17rrbUKbdvpT3q8fTd5K-35" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Helvetica;align=left;rotation=0;fontSize=13;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;products&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;--------------------------------&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;id (PK)&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;name&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;description&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;price&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;image&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;category_id (FK)&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;createdAt&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;updatedAt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="144" x="610" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="17rrbUKbdvpT3q8fTd5K-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;1&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="30" x="375" y="89" as="geometry" />
+        </mxCell>
+        <mxCell id="17rrbUKbdvpT3q8fTd5K-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="N" vertex="1">
+          <mxGeometry height="30" width="60" x="570" y="89" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
