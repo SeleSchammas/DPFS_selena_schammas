@@ -80,6 +80,14 @@ app.use("/products", productsRoutes);
 const userRoutes = require("./src/routes/userRoutes");
 app.use("/users", userRoutes);
 
+// API Users
+const apiUsersRoutes = require("./src/routes/api/users");
+app.use("/api/users", apiUsersRoutes);
+
+// API Products
+const apiProductsRoutes = require("./src/routes/api/products");
+app.use("/api/products", apiProductsRoutes);
+
 // ------------------ Carrito ------------------
 app.get("/carrito", (req, res) => {
   res.render("users/carrito", { title: "Mi Carrito - Bronte Bags" });
