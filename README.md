@@ -1,71 +1,151 @@
 # DPFS_selena_schammas
 
-## Desafío Profesional - Programación Web Full Stack
+👜 Brontë Bags
 
-## Brontë Bags - E-commerce
+Proyecto Final – Programación Web Full Stack
 
-## 🛍️ Oferta de productos
+Digital House
 
-Este sitio será un e-commerce para **Brontë Bags**, un emprendimiento dedicado a la venta de **carteras, mochilas, accesorios y gafas de sol**.  
-El objetivo es ofrecer accesorios de moda que combinen diseño, estilo y practicidad.
+⸻
 
-## 🎯 Público objetivo
+📌 Descripción del Proyecto
 
-El marketplace está orientado principalmente a:
+Brontë Bags es un e-commerce desarrollado como proyecto integrador de la carrera Full Stack Developer en Digital House.
 
-- Mujeres interesadas en accesorios modernos y accesibles.
+La aplicación permite gestionar productos y usuarios desde el backend y visualizar métricas del negocio a través de un dashboard desarrollado en React.
 
-## 👩 Sobre mí
+El proyecto integra:
+	•	Backend con API REST
+	•	Base de datos MySQL
+	•	Sequelize como ORM
+	•	Arquitectura MVC
+	•	Dashboard administrativo en React
+	•	Integración completa entre frontend y backend
 
-Soy una joven de **28 años**, estudiante de **Programación Web Full Stack**.  
-Tengo un emprendimiento pequeño de moda llamado **Brontë Bags**, y con este proyecto busco crear una plataforma digital que me permita llevar mi marca al mundo online, combinando mi formación en programación con mi pasión por el diseño y los accesorios.
+⸻
 
-## 🌐 Referentes del mercado
+🚀 Tecnologías utilizadas
 
-Estos son algunos sitios que sirven de inspiración por estética, productos o funcionalidades:
+🔹 Backend
+	•	Node.js
+	•	Express
+	•	MySQL
+	•	Sequelize
+	•	Arquitectura MVC
+	•	Middlewares
+	•	Sessions y Cookies
+	•	Validaciones
+	•	API REST en formato JSON
 
-1. [Zara](https://www.zara.com) → Por su diseño moderno y minimalista que facilita la navegación.
-2. [Prüne](https://www.prune.com.ar) → Referente local en carteras y accesorios de moda.
-3. [Ray-Ban](https://www.ray-ban.com) → Excelente experiencia de compra enfocada en gafas.
-4. [Nike](https://www.nike.com) → Interfaz clara, carrito de compras dinámico y usabilidad óptima.
-5. [Shein](https://www.shein.com) → Amplia variedad de productos, buen sistema de filtros y segmentación por público.
+🔹 Frontend (Dashboard)
+	•	React
+	•	Fetch API
+	•	Componentes reutilizables
+	•	Consumo de endpoints reales
 
-# CRUD de Productos
 
-Proyecto realizado con Node.js y Express.
+📦 Estructura del Proyecto
 
-## Funcionalidades implementadas
+/ (raíz)
+ ├── src/              → Backend (rutas, controladores, lógica)
+ ├── models/           → Modelos Sequelize
+ ├── migrations/       → Migraciones de base de datos
+ ├── seeders/          → Datos iniciales
+ ├── config/           → Configuración de la base de datos
+ ├── public/           → Archivos estáticos
+ ├── dashboard/        → Frontend React (consume la API)
+ ├── app.js            → Punto de entrada del servidor
+ └── package.json
 
-- Listado de productos
-- Detalle de producto
-- Creación de productos
-- Edición de productos
-- Eliminación de productos
+🔌 API REST
 
-## Tecnologías usadas
+Endpoints de Usuarios
+	•	GET /api/users
+	•	GET /api/users/:id
 
-- Node.js
-- Express
-- EJS
-- Express Router
-- Method Override
-- Multer
-- Persistencia en archivo JSON
-- Los productos se almacenan en un archivo `products.json`, simulando una base de datos.
+Incluye:
+	•	Listado completo
+	•	Detalle individual
+	•	Respuestas estructuradas en JSON
 
-## Cómo ejecutar el proyecto
+⸻
 
-1. Clonar el repositorio
-2. Ejecutar `npm install`
-3. Ejecutar `npm start`
-4. Abrir navegador en `http://localhost:3000`
+Endpoints de Productos
+	•	GET /api/products
+	•	GET /api/products/:id
 
-## Rutas principales
+Incluye:
+	•	Listado completo
+	•	Detalle individual
+	•	Conteo por categorías
+	•	Paginación
+	•	Respuestas estructuradas en JSON
 
-- GET /products
-- GET /products/:id
-- GET /products/create
-- POST /products
-- GET /products/:id/edit
-- PUT /products/:id
-- DELETE /products/:id
+⸻
+
+📊 Dashboard en React
+
+El dashboard consume la API y muestra:
+	•	Total de productos
+	•	Total de usuarios
+	•	Total de categorías
+	•	Último producto creado
+	•	Listado dinámico de productos
+
+Todos los datos se obtienen en tiempo real desde la base de datos.
+
+⚙️ Cómo ejecutar el proyecto
+
+1️⃣ Clonar el repositorio
+
+git clone https://github.com/SeleSchammas/DPFS_selena_schammas.git
+
+2️⃣ Instalar dependencias (backend)
+
+npm install
+
+3️⃣ Configurar base de datos MySQL
+Crear la base de datos y ejecutar:
+
+npx sequelize db:migrate
+npx sequelize db:seed:all
+
+4️⃣ Ejecutar servidor
+
+npm start
+
+Servidor disponible en:
+
+http://localhost:3000
+
+5️⃣ Ejecutar Dashboard (React)
+
+Desde la carpeta /dashboard:
+
+npm install
+npm start
+
+Disponible en:
+
+http://localhost:3001
+(o puerto indicado por React)
+
+📊 Metodología Ágil
+
+El proyecto fue desarrollado bajo metodología ágil utilizando tablero Trello para la gestión de tareas por sprint.
+
+⸻
+
+👩‍💻 Autora
+
+Maria Selena Schammas
+Estudiante Full Stack Developer
+Digital House
+
+⸻
+
+✅ Estado del Proyecto
+
+Proyecto finalizado y completamente funcional.
+Integración backend + frontend realizada correctamente.
+Listo para evaluación.
