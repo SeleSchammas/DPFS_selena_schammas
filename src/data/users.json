@@ -9,10 +9,10 @@
   },
   {
     "id": 2,
-    "name": "Sandra",
-    "email": "sandra@test.com",
-    "password": "$2b$10$MlKHncJIh9cQgthTrtgcme8fecysu6EkVUuIhkkMrur0E415ceV9O",
-    "image": "users/user-1768424330618.jpg",
+    "name": "María Selena Schammas",
+    "email": "m.selenaschammas@gmail.com",
+    "password": "$2b$10$QpYB0mHlmgKrc.tx5i0gXuPW5i7CEJ3/w.g.SdyTtY8x/gFJ9OT0m",
+    "image": "users/user-1771428141638.jpg",
     "role": "user"
   }
 ]

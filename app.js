@@ -3,6 +3,7 @@ const path = require("path");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 // ------------------ Sequelize ------------------
 const db = require("./src/database/models");
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(cookieParser());
+app.use(cors());
 
 // ------------------ Session ------------------
 app.use(
@@ -79,6 +81,14 @@ app.use("/products", productsRoutes);
 // Users
 const userRoutes = require("./src/routes/userRoutes");
 app.use("/users", userRoutes);
+
+// API Users
+const apiUsersRoutes = require("./src/routes/api/users");
+app.use("/api/users", apiUsersRoutes);
+
+// API Products
+const apiProductsRoutes = require("./src/routes/api/products");
+app.use("/api/products", apiProductsRoutes);
 
 // ------------------ Carrito ------------------
 app.get("/carrito", (req, res) => {
