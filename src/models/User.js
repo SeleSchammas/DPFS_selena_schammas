@@ -30,7 +30,7 @@ const User = {
     const users = this.getAll();
 
     const newUser = {
-      id: users.lengthh ? users[user.length - 1].id + 1 : 1,
+      id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
       name: userData.name,
       email: userData.email,
       password: bcrypt.hashSync(userData.password, 10),
@@ -41,6 +41,8 @@ const User = {
     users.push(newUser);
 
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+
+    console.log("USERS ACTUALES:", users);
 
     return newUser;
   },

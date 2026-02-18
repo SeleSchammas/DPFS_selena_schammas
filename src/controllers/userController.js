@@ -2,9 +2,7 @@ const { validationResult } = require("express-validator");
 const User = require("../models/User");
 
 const userController = {
-  // =====================
   // FORMULARIOS
-  // =====================
 
   loginForm: (req, res) => {
     return res.render("users/login", {
@@ -24,9 +22,8 @@ const userController = {
     });
   },
 
-  // =====================
   // PROCESAR REGISTRO
-  // =====================
+
   register: (req, res) => {
     console.log("ENTRO AL REGISTRO");
     console.log("BODY:", req.body);
@@ -76,9 +73,7 @@ const userController = {
     }
   },
 
-  // =====================
   // PROCESAR LOGIN
-  // =====================
 
   login: (req, res) => {
     const errors = validationResult(req);
@@ -93,13 +88,28 @@ const userController = {
     }
 
     const { email, password } = req.body;
-    const user = User.validateLogin(email, password);
+
+    const user = User.findByEmail(email);
 
     if (!user) {
       return res.render("users/login", {
         title: "Iniciar sesión",
         userLogged: req.session.userLogged || null,
-        errors: { credentials: { msg: "Credenciales inválidas" } },
+        errors: { credentials: { msg: "Email no registrado" } },
+        oldData: req.body,
+      });
+    }
+
+    const isValidPassword = require("bcryptjs").compareSync(
+      password,
+      user.password,
+    );
+
+    if (!isValidPassword) {
+      return res.render("users/login", {
+        title: "Iniciar sesión",
+        userLogged: req.session.userLogged || null,
+        errors: { credentials: { msg: "Contraseña incorrecta" } },
         oldData: req.body,
       });
     }
@@ -115,9 +125,7 @@ const userController = {
     return res.redirect("/users/profile");
   },
 
-  // =====================
   // PERFIL
-  // =====================
 
   profile: (req, res) => {
     if (!req.session.userLogged) {
@@ -130,9 +138,7 @@ const userController = {
     });
   },
 
-  // =====================
   // LOGOUT
-  // =====================
 
   logout: (req, res) => {
     res.clearCookie("userEmail");
